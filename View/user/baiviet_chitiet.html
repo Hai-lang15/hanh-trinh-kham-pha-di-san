@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết bài viết - Hành Trình Khám Phá Di Sản</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/baiviet_chitiet.css">
+</head>
+<body>
+
+
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">DS</span>
+        <div>
+          <strong>HÀNH TRÌNH <span>DI SẢN</span></strong>
+          <small>Lịch sử • Văn hóa • Ký ức</small>
+        </div>
+      </a>
+
+      <nav class="menu">
+        <a href="index.html">Trang chủ</a>
+        <a href="disan.html">Di sản</a>
+        <a href="index.html#map">Bản đồ</a>
+        <a href="index.html#gallery">Thư viện</a>
+        <a href="baiviet.html" class="active">Bài viết</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="search-btn" aria-label="Tìm kiếm">⌕</button>
+        <div id="khuVucTaiKhoan">
+          <a href="auth.html" class="login-btn">Đăng nhập</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+  
+    <section class="article-header">
+      <div class="container article-header-inner">
+        <a href="baiviet.html" class="article-back">← Quay lại bài viết</a>
+        <p class="eyebrow brown">GÓC CHIA SẺ DI SẢN</p>
+        <h1 id="tieuDe">Đang tải bài viết...</h1>
+        <div class="article-info">
+          <span>✍️ <span id="nguoiDang">Đang tải...</span></span>
+          <span>•</span>
+          <span>📅 <span id="ngayTao">--/--/----</span></span>
+          <span>•</span>
+          <span>🏛️ <span id="tenDiSan">--</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-detail section">
+      <div class="container article-layout">
+
+        <article class="article-main">
+          <div id="noiDungBaiViet">
+            <p class="article-loading">Đang tải nội dung bài viết...</p>
+          </div>
+        </article>
+
+        <aside class="article-sidebar">
+
+          <div class="article-sidebar-box">
+            <p class="eyebrow brown">THÔNG TIN</p>
+            <h3>Bài viết</h3>
+
+            <div class="article-sidebar-item">
+              <small>Người đăng</small>
+              <strong id="sidebarNguoiDang">--</strong>
+            </div>
+
+            <div class="article-sidebar-item">
+              <small>Ngày đăng</small>
+              <strong id="sidebarNgayTao">--</strong>
+            </div>
+
+            <div class="article-sidebar-item">
+              <small>Di sản liên quan</small>
+              <strong id="sidebarDiSan">--</strong>
+            </div>
+          </div>
+
+          <div class="article-sidebar-box">
+            <p class="eyebrow brown">CHIA SẺ</p>
+            <h3>Chia sẻ bài viết</h3>
+            <button class="share-btn" onclick="chiaSeFacebook()">Facebook</button>
+            <button class="share-btn" onclick="copyLink()">Sao chép liên kết</button>
+          </div>
+
+        </aside>
+
+      </div>
+    </section>
+
+    <section class="related-articles section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow brown">KHÁM PHÁ THÊM</p>
+            <h2>Bài viết liên quan</h2>
+          </div>
+          <a href="bai-viet.html" class="view-all">Xem tất cả →</a>
+        </div>
+
+        <div class="related-grid" id="baiVietLienQuan"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <strong class="footer-logo">HÀNH TRÌNH DI SẢN</strong>
+        <p>Khám phá • Kết nối • Lưu giữ giá trị</p>
+      </div>
+
+      <div>
+        <h4>Khám phá</h4>
+        <a href="disan.html">Di sản</a>
+        <a href="index.html#map">Bản đồ</a>
+        <a href="index.html#gallery">Thư viện</a>
+      </div>
+
+      <div>
+        <h4>Cộng đồng</h4>
+        <a href="bai-viet.html">Bài viết</a>
+        <a href="auth.html">Đăng nhập</a>
+        <a href="auth.html">Đăng ký</a>
+      </div>
+    </div>
+
+    <div class="copyright">© 2026 Hành Trình Khám Phá Di Sản</div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/baiviet_chitiet.js"></script>
+</body>
+</html>

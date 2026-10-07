@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - Hành Trình Di Sản</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <div class="auth-page">
+        <div class="auth-container">
+            <div class="auth-left">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">DS</span>
+                    <div>
+                        <strong>HÀNH TRÌNH <span>DI SẢN</span></strong>
+                        <small>Lịch sử • Văn hóa • Ký ức</small>
+                    </div>
+                </a>
+                <div class="auth-intro">
+                    <p>HÀNH TRÌNH KHÁM PHÁ DI SẢN</p>
+                    <h1>Trở về với những <span>giá trị của thời gian</span></h1>
+                    <p>Đăng nhập để khám phá, chia sẻ và lưu giữ những câu chuyện về di sản.</p>
+                </div>
+            </div>
+            <div class="auth-right">
+                <a href="index.html" class="back-home">← Trang chủ</a>
+                <div class="auth-box">
+                    <div class="auth-tabs">
+                        <button class="auth-tab active" id="tabLogin">Đăng nhập</button>
+                        <button class="auth-tab" id="tabRegister">Đăng ký</button>
+                    </div>
+                    <form id="loginForm">
+                        <h2>Chào mừng trở lại</h2>
+                        <p>Đăng nhập vào tài khoản của bạn</p>
+                        <div class="form-group">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" id="loginEmail" placeholder="Nhập email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Mật khẩu</label>
+                            <input type="password" id="loginPassword" placeholder="Nhập mật khẩu" required>
+                        </div>
+                        <button type="submit" class="auth-button">Đăng nhập</button>
+                    </form>
+                    <form id="registerForm" style="display: none;">
+                        <h2>Tạo tài khoản</h2>
+                        <p>Tham gia cộng đồng khám phá di sản</p>
+                        <div class="form-group">
+                            <label for="registerName">Họ và tên</label>
+                            <input type="text" id="registerName" placeholder="Nhập họ và tên" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerEmail">Email</label>
+                            <input type="email" id="registerEmail" placeholder="Nhập email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPassword">Mật khẩu</label>
+                            <input type="password" id="registerPassword" placeholder="Nhập mật khẩu" required>
+                        </div>
+                        <button type="submit" class="auth-button">Đăng ký</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/auth.js"></script>
+</body>
+</html>

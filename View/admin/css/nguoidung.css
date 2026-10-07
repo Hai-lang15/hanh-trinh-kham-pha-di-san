@@ -1,0 +1,35 @@
+#formNguoiDung {
+    padding: 25px;
+}
+
+#formNguoiDung .form-group {
+    margin-bottom: 18px;
+}
+
+#formNguoiDung .form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#formNguoiDung input,
+#formNguoiDung select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+#formNguoiDung input:focus,
+#formNguoiDung select:focus {
+    outline: none;
+    border-color: #2b806a;
+}
+
+#formNguoiDung select {
+    background: white;
+    cursor: pointer;
+}

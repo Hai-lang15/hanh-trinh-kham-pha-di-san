@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản trị - Hành trình khám phá Di sản</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            🏛️<span>Di Sản</span>
+        </div>
+        <nav>
+            <a href="index.html" class="menu active">
+                🏠<span>Tổng quan</span>
+            </a>
+            <a href="disan.html" class="menu">
+                🏛️<span>Di sản</span>
+            </a>
+            <a href="baiviet.html" class="menu">
+                📝<span>Bài viết</span>
+            </a>
+            <a href="nguoidung.html" class="menu">
+                👥<span>Người dùng</span>
+            </a>
+            <a href="#" class="menu">
+                📂<span>Danh mục</span>
+            </a>
+
+            <a href="#" class="menu">
+                ⚙️<span>Cài đặt</span>
+            </a>
+        </nav>
+        <div class="logout">
+            🚪 Đăng xuất
+        </div>
+    </aside>
+        <main class="main">
+        <div class="table-container">
+                <div class="table-header">
+                    <div>
+                        <h2>Danh sách di sản</h2>
+                        <p>Các di sản đang được quản lý</p>
+                    </div>
+                    <button class="btn-add" id="btnThem">
+                        + Thêm di sản
+                    </button>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Tên di sản</th>
+                                <th>Địa chỉ</th>
+                                <th>Xếp hạng</th>
+                                <th>Ngày tạo</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="danhSachDiSan">
+                            <tr>
+                                <td colspan="6" class="loading">
+                                    Đang tải dữ liệu...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Thêm di sản</h2>
+                <button id="btnDong">
+                    ×
+                </button>
+            </div>
+
+            <form id="formDiSan">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tên di sản</label>
+                        <input type="text" id="ten_di_san" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Địa chỉ</label>
+                        <input type="text" id="dia_chi" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Lịch sử hình thành</label>
+                    <textarea id="lich_su_hinh_thanh"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Nhân vật liên quan</label>
+                    <textarea id="nhan_vat_lien_quan"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Sự kiện lịch sử</label>
+                    <textarea id="su_kien_lich_su"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Giá trị văn hóa</label>
+                    <textarea id="gia_tri_van_hoa"></textarea>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Kiến trúc</label>
+                    <textarea id="kien_truc"></textarea>
+                </div>
+
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Xếp hạng</label>
+                        <input type="text" id="xep_hang">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Đơn vị quản lý</label>
+                        <input type="text" id="don_vi_quan_ly">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="hinh_anh">Hình ảnh</label>
+                    <input type="file" id="hinh_anh" name="hinh_anh" accept="image/*" multiple>
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button"class="btn-cancel"id="btnHuy">
+                        Hủy
+                    </button>
+
+                    <button type="submit" class="btn-save">
+                        Lưu di sản
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </main>
+    <script src="js/disan.js"></script>
+</body>
+</html>

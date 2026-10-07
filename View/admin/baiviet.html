@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản trị - Bài viết</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            🏛️<span>Di Sản</span>
+        </div>
+
+        <nav>
+            <a href="index.html" class="menu">
+                🏠<span>Tổng quan</span>
+            </a>
+
+            <a href="disan.html" class="menu">
+                🏛️<span>Di sản</span>
+            </a>
+
+            <a href="baiviet.html" class="menu active">
+                📝<span>Bài viết</span>
+            </a>
+
+            <a href="nguoidung.html" class="menu">
+                👥<span>Người dùng</span>
+            </a>
+
+            <a href="#" class="menu">
+                📂<span>Danh mục</span>
+            </a>
+
+            <a href="#" class="menu">
+                ⚙️<span>Cài đặt</span>
+            </a>
+        </nav>
+
+        <div class="logout">
+            🚪 Đăng xuất
+        </div>
+    </aside>
+
+    <main class="main">
+        <div class="table-container">
+            <div class="table-header">
+                <div>
+                    <h2>Danh sách bài viết</h2>
+                    <p>Các bài viết đang được quản lý</p>
+                </div>
+
+                <button class="btn-add" id="btnThem">
+                    + Thêm bài viết
+                </button>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tiêu đề</th>
+                            <th>Người đăng</th>
+                            <th>Di sản</th>
+                            <th>Trạng thái</th>
+                            <th>Ngày tạo</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="danhSachBaiViet">
+                        <tr>
+                            <td colspan="7" class="loading">
+                                Đang tải dữ liệu...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="tieuDeModal">Thêm bài viết</h2>
+
+                <button id="btnDong">
+                    ×
+                </button>
+            </div>
+
+            <form id="formBaiViet">
+    <div class="form-group">
+        <label for="ten_nguoi_dang">Người đăng</label>
+        <input type="text" id="ten_nguoi_dang" value="Admin" readonly>
+        <input type="hidden" id="ma_nguoi_dung" value="1">
+    </div>
+
+    <div class="form-group">
+        <label for="ma_di_san">Di sản liên quan</label>
+        <select id="ma_di_san">
+            <option value="">-- Chọn di sản --</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="tieu_de">Tiêu đề</label>
+        <input type="text" id="tieu_de" required>
+    </div>
+
+    <div class="form-group">
+    <label>Nội dung bài viết</label>
+    <div id="danhSachBlock"></div>
+    <div class="block-buttons">
+        <button type="button" id="btnThemText">+ Thêm đoạn văn</button>
+        <button type="button" id="btnThemImage">+ Thêm hình ảnh</button>
+        <button type="button" id="btnThemLink">+ Thêm link</button>
+    </div>
+</div>
+    <div class="form-group">
+        <label for="trang_thai">Trạng thái</label>
+        <select id="trang_thai">
+            <option value="cho_duyet">Chờ duyệt</option>
+            <option value="da_duyet">Đã duyệt</option>
+            <option value="tu_choi">Từ chối</option>
+        </select>
+    </div>
+   
+
+    <div class="modal-footer">
+        <button type="button" class="btn-cancel" id="btnHuy">
+            Hủy
+        </button>
+        <button type="submit" class="btn-save">
+            Lưu bài viết
+        </button>
+    </div>
+</form>
+        </div>
+    </div>
+
+    <script src="js/baiviet.js"></script>
+</body>
+</html>

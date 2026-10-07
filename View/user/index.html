@@ -11,7 +11,7 @@
 </head>
 <body>
 
-  <!-- HEADER -->
+  
   <header class="header">
     <div class="container nav">
       <a href="#" class="logo">
@@ -23,7 +23,7 @@
       </a>
 
       <nav class="menu">
-        <a href="index.html">Trang chủ</a>
+        <a href="#home">Trang chủ</a>
         <a href="disan.html">Di sản</a>
         <a href="#map">Bản đồ</a>
         <a href="#gallery">Thư viện</a>
@@ -37,10 +37,17 @@
         </div>
       </div>
     </div>
+    <div id="logoutMessage" class="logout-message">
+    <div class="logout-box">
+        <div class="logout-icon">✓</div>
+        <h3>Đăng xuất thành công</h3>
+        <p>Bạn đã đăng xuất khỏi tài khoản.</p>
+    </div>
+</div>
   </header>
 
   <main>
-    <!-- HERO -->
+    
     <section class="hero" id="home">
       <div class="hero-overlay"></div>
       <div class="container hero-content">
@@ -57,7 +64,7 @@
       </div>
     </section>
 
-    <!-- INTRO -->
+   
     <section class="intro section">
       <div class="container intro-grid">
         <div>
@@ -73,7 +80,7 @@
       </div>
     </section>
 
-    <!-- HERITAGE -->
+   
     <section class="heritage section" id="heritage">
       <div class="container">
         <div class="section-heading">
@@ -91,46 +98,21 @@
       </div>
     </section>
 
-    <!-- MAP -->
+   
     <section class="map-section section" id="map">
       <div class="container map-grid">
         <div class="map-info">
           <p class="eyebrow">ĐỊNH VỊ DI SẢN</p>
           <h2>Bản đồ hành trình</h2>
          
-
-          <div class="map-list">
-            <button class="map-place active" data-place="Chùa Tường Quang">
-              <span>01</span>
-              <div><strong>Chùa Tường Quang</strong><small>Địa điểm di sản</small></div>
-            </button>
-            <button class="map-place" data-place="Đình Tân Hội">
-              <span>02</span>
-              <div><strong>Đình Tân Hội</strong><small>Địa điểm di sản</small></div>
-            </button>
-            <button class="map-place" data-place="Miếu Cây Quéo">
-              <span>03</span>
-              <div><strong>Miếu Cây Quéo</strong><small>Địa điểm di sản</small></div>
-            </button>
-            <button class="map-place" data-place="Nhà tưởng niệm Nguyễn An Ninh">
-              <span>04</span>
-              <div><strong>Nhà tưởng niệm Nguyễn An Ninh</strong><small>Địa điểm tưởng niệm</small></div>
-            </button>
+          <div class="map-list" id="mapList"></div>
+          
+          <div class="map-box">
+            <iframe id="googleMap" src="" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
-        </div>
-
-        <div class="map-box">
-          <div class="map-placeholder">
-            <div class="map-pin">⌖</div>
-            <h3 id="selectedPlace">Đang tải...</h3>
-              <p id="selectedAddress">Đang tải thông tin...</p>
-            <button class="btn btn-primary" id="mapButton"> Mở bản đồ</button>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- GALLERY -->
+    
     <section class="gallery section" id="gallery">
       <div class="container">
         <div class="section-heading center">
@@ -139,54 +121,15 @@
             <h2>Di sản qua từng khung hình</h2>
           </div>
         </div>
-
-        <!-- <div class="gallery-grid">
-          <div class="gallery-item large image-1"><span>Chùa Tường Quang</span></div>
-          <div class="gallery-item image-2"><span>Đình Tân Hội</span></div>
-          <div class="gallery-item image-3"><span>Miếu Cây Quéo</span></div>
-          <div class="gallery-item image-4"><span>Nhà tưởng niệm Nguyễn An Ninh</span></div>
-        </div> -->
         <div class="gallery-grid" id="galleryGrid">
-
         </div>
       </div>
     </section>
 
    
-    <!-- <section class="stories section" id="stories">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow brown">GÓC CHIA SẺ</p>
-            <h2>Câu chuyện từ người dùng</h2>
-          </div>
-          <button class="btn btn-primary" id="shareButton">+ Chia sẻ câu chuyện</button>
-        </div>
+    
+  </main>
 
-        <div class="story-grid">
-          <article class="story-card">
-            <div class="stars">★★★★★</div>
-            <p>“Một chuyến đi giúp mình hiểu hơn về lịch sử và những giá trị văn hóa ngay tại nơi mình sống.”</p>
-            <div class="author"><span>MH</span><div><strong>Minh Hoàng</strong><small>Người khám phá</small></div></div>
-          </article>
-
-          <article class="story-card">
-            <div class="stars">★★★★★</div>
-            <p>“Không chỉ là những địa điểm để tham quan, mỗi nơi đều có một câu chuyện rất đáng để tìm hiểu.”</p>
-            <div class="author"><span>AN</span><div><strong>An Nguyễn</strong><small>Người khám phá</small></div></div>
-          </article>
-
-          <article class="story-card">
-            <div class="stars">★★★★★</div>
-            <p>“Mình thích cách website giúp người trẻ tiếp cận lịch sử bằng hình ảnh, bản đồ và những câu chuyện gần gũi.”</p>
-            <div class="author"><span>TL</span><div><strong>Thanh Linh</strong><small>Người khám phá</small></div></div>
-          </article>
-        </div>
-      </div>
-    </section> -->
-  </main>`
-
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-grid">
       <div>

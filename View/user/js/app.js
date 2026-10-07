@@ -83,30 +83,13 @@ function hienThiBanDo() {
 
 function chonDiSan(diSan) {
     diSanDangChon = diSan;
-
-    const selectedPlace = document.getElementById("selectedPlace");
-    const selectedAddress = document.getElementById("selectedAddress");
-
-    if (selectedPlace) selectedPlace.textContent = diSan.ten_di_san;
-    if (selectedAddress) selectedAddress.textContent = diSan.dia_chi || "Chưa có địa chỉ";
-
+    const googleMap = document.getElementById("googleMap");
+    if (googleMap) {
+        const diaChi = diSan.dia_chi || diSan.ten_di_san;
+        googleMap.src = `https://www.google.com/maps?q=${encodeURIComponent(diaChi)}&output=embed`;
+    }
     document.querySelectorAll(".map-place").forEach(item => {
         item.classList.toggle("active", Number(item.dataset.id) === Number(diSan.id));
-    });
-}
-
-const mapButton = document.getElementById("mapButton");
-
-if (mapButton) {
-    mapButton.addEventListener("click", () => {
-        if (!diSanDangChon) {
-            alert("Vui lòng chọn một di sản.");
-            return;
-        }
-
-        const diaChi = diSanDangChon.dia_chi || diSanDangChon.ten_di_san;
-        const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(diaChi)}`;
-        window.open(url, "_blank");
     });
 }
 
@@ -196,16 +179,16 @@ async function kiemTraTaiKhoan() {
 async function dangXuat() {
     try {
         const response = await fetch("/api/auth/dang-xuat", { method: "POST" });
-        const data = await response.json();
-        if (!response.ok) {
-            alert(data.message || "Đăng xuất thất bại");
-            return;
-        }
-        alert("Đăng xuất thành công!");
-        window.location.href = "index.html";
+        if (!response.ok) return;
+
+        const logoutMessage = document.getElementById("logoutMessage");
+        if (logoutMessage) logoutMessage.style.display = "flex";
+
+        setTimeout(function () {
+            window.location.href = "index.html";
+        }, 1500);
     } catch (error) {
         console.log(error);
-        alert("Không thể kết nối đến server!");
     }
 }
 

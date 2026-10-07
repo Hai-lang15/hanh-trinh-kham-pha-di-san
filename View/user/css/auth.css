@@ -204,6 +204,23 @@ button {
     background: #8d4e29;
 }
 
+.form-message {
+    margin: 10px 0;
+    min-height: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.form-message.error {
+    color: #d93025;
+}
+
+.form-message.success {
+    color: #188038;
+}
+
 @media (max-width: 750px) {
     .auth-container {
         grid-template-columns: 1fr;

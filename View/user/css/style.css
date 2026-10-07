@@ -569,6 +569,46 @@ h2 {
   transform: translateY(-1px);
 }
 
+.logout-message {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 9999;
+}
+
+.logout-box {
+    width: 360px;
+    padding: 30px;
+    background: white;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.logout-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #188038;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logout-box h3 {
+    margin-bottom: 8px;
+}
+
+.logout-box p {
+    color: #777;
+}
+
 @media (max-width: 1000px) {
   .menu {
     display: none;

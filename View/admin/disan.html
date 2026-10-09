@@ -12,10 +12,10 @@
             🏛️<span>Di Sản</span>
         </div>
         <nav>
-            <a href="index.html" class="menu active">
+            <a href="index.html" class="menu">
                 🏠<span>Tổng quan</span>
             </a>
-            <a href="disan.html" class="menu">
+            <a href="disan.html" class="menu active">
                 🏛️<span>Di sản</span>
             </a>
             <a href="baiviet.html" class="menu">
@@ -24,16 +24,19 @@
             <a href="nguoidung.html" class="menu">
                 👥<span>Người dùng</span>
             </a>
-            <a href="#" class="menu">
+             <a href="media.html" class="menu">
+                🖼️<span>Hình ảnh & Video</span>
+            </a>
+            <!-- <a href="#" class="menu">
                 📂<span>Danh mục</span>
             </a>
 
             <a href="#" class="menu">
                 ⚙️<span>Cài đặt</span>
-            </a>
+            </a> -->
         </nav>
-        <div class="logout">
-            🚪 Đăng xuất
+        <div class="logout"> 
+            <button id="btnDangXuat">🚪 Đăng xuất</button>
         </div>
     </aside>
         <main class="main">
@@ -93,6 +96,19 @@
                     </div>
                 </div>
 
+                 <div class="form-row">
+                    <div class="form-group">
+                        <label>Vĩ độ</label>
+                        <input type="number" step="any" id="vi_do" placeholder="Ví dụ: 10.8612345">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Kinh độ</label>
+                        <input type="number" step="any" id="kinh_do" placeholder="Ví dụ: 106.6254321">
+                    </div>
+                </div>
+                
+
                 <div class="form-group">
                     <label>Lịch sử hình thành</label>
                     <textarea id="lich_su_hinh_thanh"></textarea>
@@ -139,6 +155,28 @@
                     <input type="file" id="hinh_anh" name="hinh_anh" accept="image/*" multiple>
                 </div>
 
+                <div class="form-group">
+                    <label for="video_di_san">Video di sản</label>
+
+                    <input type="file"id="video_di_san"name="video"accept="video/mp4,video/webm,video/quicktime"multiple>
+
+                    <small class="form-note">
+                        Có thể chọn nhiều video. Tối đa 100MB/video.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="video_tieu_de">Tiêu đề video</label>
+
+                    <input type="text"id="video_tieu_de"placeholder="Ví dụ: Toàn cảnh Chùa Tường Quang">
+                </div>
+
+                <div class="form-group">
+                    <label for="video_mo_ta">Mô tả video</label>
+
+                    <textarea id="video_mo_ta"rows="3"placeholder="Mô tả ngắn về video..."></textarea>
+                </div>
+
 
                 <div class="modal-footer">
                     <button type="button"class="btn-cancel"id="btnHuy">
@@ -154,5 +192,6 @@
     </div>
     </main>
     <script src="js/disan.js"></script>
+    <script src="js/admin.js"></script>
 </body>
 </html>

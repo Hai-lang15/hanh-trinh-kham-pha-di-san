@@ -12,10 +12,10 @@
             🏛️<span>Di Sản</span>
         </div>
         <nav>
-            <a href="index.html" class="menu ">
+            <a href="index.html" class="menu active ">
                 🏠<span>Tổng quan</span>
             </a>
-            <a href="disan.html" class="menu active">
+            <a href="disan.html" class="menu">
                 🏛️<span>Di sản</span>
             </a>
             <a href="baiviet.html" class="menu">
@@ -24,13 +24,16 @@
             <a href="nguoidung.html" class="menu">
                 👥<span>Người dùng</span>
             </a>
-            <a href="#" class="menu">
+            <a href="media.html" class="menu">
+                🖼️<span>Hình ảnh & Video</span>
+            </a>
+            <!-- <a href="#" class="menu">
                 📂<span>Danh mục</span>
             </a>
 
             <a href="#" class="menu">
                 ⚙️<span>Cài đặt</span>
-            </a>
+            </a> -->
         </nav>
         <div class="logout"> 
             <button id="btnDangXuat">🚪 Đăng xuất</button>
@@ -70,30 +73,26 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-icon article">
-                        📝
-                    </div>
+                    <div class="card-icon article">📝</div>
                     <div>
                         <p>Bài viết</p>
-                        <h3>0</h3>
+                        <h3 id="tongBaiViet">0</h3>
                     </div>
                 </div>
+
                 <div class="card">
-                    <div class="card-icon user">
-                        👥
-                    </div>
+                    <div class="card-icon user">👥</div>
                     <div>
                         <p>Người dùng</p>
-                        <h3>0</h3>
+                        <h3 id="tongNguoiDung">0</h3>
                     </div>
                 </div>
+
                 <div class="card">
-                    <div class="card-icon pending">
-                        ⏳
-                    </div>
+                    <div class="card-icon pending">⏳</div>
                     <div>
                         <p>Chờ duyệt</p>
-                        <h3>0</h3>
+                        <h3 id="tongChoDuyet">0</h3>
                     </div>
                 </div>
             </div>
@@ -104,9 +103,9 @@
                         <h2>Danh sách di sản</h2>
                         <p>Các di sản đang được quản lý</p>
                     </div>
-                    <button class="btn-add" id="btnThem">
+                    <!-- <button class="btn-add" id="btnThem">
                         + Thêm di sản
-                    </button>
+                    </button> -->
                 </div>
                 <div class="table-wrapper">
                     <table>
@@ -117,7 +116,7 @@
                                 <th>Địa chỉ</th>
                                 <th>Xếp hạng</th>
                                 <th>Ngày tạo</th>
-                                <th>Thao tác</th>
+                                <!-- <th>Thao tác</th> -->
                             </tr>
                         </thead>
                         <tbody id="danhSachDiSan">
@@ -133,99 +132,13 @@
         </section>
     </main>
 
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Thêm di sản</h2>
-                <button id="btnDong">
-                    ×
-                </button>
-            </div>
-
-            <form id="formDiSan">
-                <div class="form-row">
-                <div class="form-group">
-                    <label>Tên di sản</label>
-                    <input type="text" id="ten_di_san" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Địa chỉ</label>
-                    <input type="text" id="dia_chi" required>
-                </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Vĩ độ</label>
-                        <input type="number" step="any" id="vi_do" placeholder="Ví dụ: 10.8612345">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Kinh độ</label>
-                        <input type="number" step="any" id="kinh_do" placeholder="Ví dụ: 106.6254321">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Lịch sử hình thành</label>
-                    <textarea id="lich_su_hinh_thanh"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Nhân vật liên quan</label>
-                    <textarea id="nhan_vat_lien_quan"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Sự kiện lịch sử</label>
-                    <textarea id="su_kien_lich_su"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Giá trị văn hóa</label>
-                    <textarea id="gia_tri_van_hoa"></textarea>
-                </div>
-
-
-                <div class="form-group">
-                    <label>Kiến trúc</label>
-                    <textarea id="kien_truc"></textarea>
-                </div>
-
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Xếp hạng</label>
-                        <input type="text" id="xep_hang">
-                    </div>
-
-
-                    <div class="form-group">
-                        <label>Đơn vị quản lý</label>
-                        <input type="text" id="don_vi_quan_ly">
-                    </div>
-                </div>
-
-
-                <div class="form-group">
-                    <label>Hình ảnh</label>
-                    <input type="text" id="hinh_anh" placeholder="URL hình ảnh">
-                </div>
-
-
-                <div class="modal-footer">
-                    <button type="button"class="btn-cancel"id="btnHuy">
-                        Hủy
-                    </button>
-
-                    <button type="submit" class="btn-save">
-                        Lưu di sản
-                    </button>
-                </div>
-            </form>
+   
         </div>
     </div>
+
+
+
+
 
     <script src="js/admin.js"></script>
 </body>

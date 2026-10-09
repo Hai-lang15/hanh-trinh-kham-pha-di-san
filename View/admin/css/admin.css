@@ -53,11 +53,39 @@ nav {
 
 
 .logout {
-    margin-top: auto; padding: 20px;
+    margin-top: auto;
+    padding: 20px;
     border-top: 1px solid rgba(255,255,255,0.1);
-    cursor: pointer;
 }
 
+#btnDangXuat {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 15px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.06);
+    color: #d8e5df;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+#btnDangXuat:hover {
+    background: #c0392b;
+    border-color: #c0392b;
+    color: white;
+    transform: translateY(-1px);
+}
+
+#btnDangXuat:active {
+    transform: translateY(0);
+}
 
 .main {
     margin-left: 240px;
@@ -422,6 +450,172 @@ td {
 
 #formBaiViet .btn-save:hover {
     background: #236b59;
+}
+
+.logout-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.45);
+    padding: 20px;
+}
+
+.logout-modal {
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    animation: logoutModalIn 0.25s ease;
+}
+
+.logout-icon {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f5f7f6;
+    font-size: 25px;
+}
+
+.logout-modal h3 {
+    margin: 0 0 10px;
+    font-size: 21px;
+    color: #173f35;
+}
+
+.logout-modal p {
+    margin: 0 0 25px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.logout-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.logout-actions button {
+    flex: 1;
+    padding: 11px 18px;
+    border-radius: 7px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.logout-actions .btn-cancel {
+    border: 1px solid #d1d5db;
+    background: #fff;
+    color: #374151;
+}
+
+.logout-actions .btn-cancel:hover {
+    background: #f3f4f6;
+}
+
+.logout-actions .btn-confirm {
+    border: 1px solid #173f35;
+    background: #173f35;
+    color: #fff;
+}
+
+.logout-actions .btn-confirm:hover {
+    background: #2b806a;
+    border-color: #2b806a;
+}
+
+.logout-actions .btn-confirm:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.toast {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 9999;
+    min-width: 260px;
+    padding: 14px 20px;
+    border-radius: 8px;
+    background: #173f35;
+    color: #fff;
+    font-size: 14px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    animation: toastIn 0.3s ease;
+}
+
+.toast.error {
+    background: #a94442;
+}
+
+.toast.hide {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: 0.3s ease;
+}
+
+.admin-toast {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 99999;
+    min-width: 280px;
+    max-width: 400px;
+    padding: 14px 20px;
+    border-radius: 8px;
+    background: #173f35;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.admin-toast.success {
+    background: #2b806a;
+}
+
+.admin-toast.error {
+    background: #b94a48;
+}
+
+.admin-toast.hide {
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+@keyframes logoutModalIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes toastIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @media (max-width: 1000px) {

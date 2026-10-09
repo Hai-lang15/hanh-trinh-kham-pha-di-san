@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thư viện Media - Hành trình khám phá Di sản</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">
+            🏛️<span>Di Sản</span>
+        </div>
+        <nav>
+            <a href="index.html" class="menu ">
+                🏠<span>Tổng quan</span>
+            </a>
+            <a href="disan.html" class="menu">
+                🏛️<span>Di sản</span>
+            </a>
+            <a href="baiviet.html" class="menu">
+                📝<span>Bài viết</span>
+            </a>
+            <a href="nguoidung.html" class="menu">
+                👥<span>Người dùng</span>
+            </a>
+            <a href="media.html" class="menu active" >
+                🖼️<span>Hình ảnh & Video</span>
+            </a>
+            <!-- <a href="#" class="menu">
+                📂<span>Danh mục</span>
+            </a>
+
+            <a href="#" class="menu">
+                ⚙️<span>Cài đặt</span>
+            </a> -->
+        </nav>
+        <div class="logout"> 
+            <button id="btnDangXuat">🚪 Đăng xuất</button>
+        </div>
+    </aside>
+
+    <main class="main">
+    <div class="media-content">
+        <div class="media-header">
+            <div>
+                <p class="media-eyebrow"> THƯ VIỆN</p>
+                <h1>Hình ảnh & Video</h1>
+                <p>Quản lý hình ảnh và video của các di sản.</p>
+            </div>
+
+            <button class="media-add-btn" id="btnThemMedia"> + Thêm media </button>
+
+        </div>
+
+        <div class="media-toolbar">
+            <div class="media-tabs">
+                <button class="media-tab active" data-filter="all" > Tất cả</button>
+                <button class="media-tab" data-filter="image"> 🖼️ Hình ảnh</button>
+                <button class="media-tab" data-filter="video">🎬 Video</button>
+            </div>
+
+            <select id="selectDiSan">
+                <option value="">Tất cả di sản</option>
+            </select>
+        </div>
+
+        <div class="media-stats">
+            <div class="media-stat">
+                <span>🖼️</span>
+                <div>
+                    <small>Hình ảnh</small>
+                    <strong id="tongHinhAnh">0</strong>
+                </div>
+            </div>
+
+            <div class="media-stat">
+                <span>🎬</span>
+                <div>
+                    <small>Video</small>
+                    <strong id="tongVideo">0</strong>
+                </div>
+            </div>
+
+            <div class="media-stat">
+                <span>📁</span>
+
+                <div>
+                    <small>Tổng media</small>
+                    <strong id="tongMedia">0</strong>
+                </div>
+            </div>
+
+        </div>
+
+        <section class="media-section">
+
+            <div
+                id="mediaGrid"
+                class="media-grid"
+            ></div>
+
+        </section>
+    </div>
+    </main>
+
+    <div class="media-modal" id="mediaModal" >
+        <div class="media-modal-box">
+            <div class="media-modal-header">
+                <div>
+                    <p class="media-eyebrow"> THƯ VIỆN</p>
+                    <h2> Thêm media</h2>
+                </div>
+
+                <button class="media-close" id="btnDongModal"> × </button>
+            </div>
+
+
+            <form id="formMedia">
+                <div class="media-form-group">
+
+                    <label for="mediaDiSan">
+                        Di sản
+                    </label>
+
+                    <select
+                        id="mediaDiSan"
+                        required
+                    >
+                        <option value="">
+                            -- Chọn di sản --
+                        </option>
+                    </select>
+
+                </div>
+
+
+                <div class="media-form-group">
+
+                    <label>
+                        Loại media
+                    </label>
+
+                    <div class="media-type-buttons">
+
+                        <button
+                            type="button"
+                            class="media-type active"
+                            data-type="image"
+                        >
+                            🖼️ Hình ảnh
+                        </button>
+
+                        <button
+                            type="button"
+                            class="media-type"
+                            data-type="video"
+                        >
+                            🎬 Video
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="media-form-group">
+
+                    <label for="mediaFiles">
+                        Chọn file
+                    </label>
+
+                    <input
+                        type="file"
+                        id="mediaFiles"
+                        multiple
+                        required
+                    >
+
+                    <small id="mediaHint">
+                        Có thể chọn nhiều hình ảnh JPG, PNG, WEBP.
+                    </small>
+
+                </div>
+
+
+                <div class="media-form-group">
+
+                    <label for="mediaTieuDe">
+                        Tiêu đề
+                    </label>
+
+                    <input
+                        type="text"
+                        id="mediaTieuDe"
+                        placeholder="Ví dụ: Toàn cảnh Chùa Tường Quang"
+                    >
+
+                </div>
+
+
+                <div class="media-form-group">
+
+                    <label for="mediaMoTa">
+                        Mô tả
+                    </label>
+
+                    <textarea
+                        id="mediaMoTa"
+                        rows="4"
+                        placeholder="Mô tả ngắn về media..."
+                    ></textarea>
+
+                </div>
+
+
+                <div
+                    id="mediaPreview"
+                    class="media-preview"
+                ></div>
+
+
+                <div class="media-modal-actions">
+
+                    <button
+                        type="button"
+                        class="media-btn-cancel"
+                        id="btnHuyMedia"
+                    >
+                        Hủy
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="media-btn-save"
+                    >
+                        Tải lên
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/media.js"></script>
+    <script src="js/admin.js"></script>
+
+</body>
+</html>

@@ -11,6 +11,7 @@ const authRoutes = require("./routes/authRoutes");
 const { kiemTraAdmin } = require("./middleware/auth");
 const hinhAnhDiSanRoutes = require("./routes/hinhAnhDiSanRoutes");
 const noiDungBaiVietRoutes = require("./routes/noiDungBaiVietRoutes");
+const videoDiSanRoutes = require("./routes/videoDiSanRoutes");
 
 const app = express();
 app.use(express.json());
@@ -26,6 +27,7 @@ app.use("/api/di-san",diSanRoutes);
 app.use("/api/bai-viet", baiVietRoutes);
 app.use("/api/nguoi-dung", nguoiDungRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/video-di-san", videoDiSanRoutes);
 app.get("/", (req, res) => {
     res.send(`
         <h1>Hành trình khám phá Di sản</h1>

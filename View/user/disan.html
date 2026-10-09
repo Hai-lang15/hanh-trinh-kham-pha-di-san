@@ -1,114 +1,118 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Di sản - Hành Trình Khám Phá Di Sản</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/disan.css">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <!DOCTYPE html>
+    <html lang="vi">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Di sản - Hành Trình Khám Phá Di Sản</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/disan.css">
+    <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container nav">
-      <a href="index.html" class="logo">
-        <span class="logo-icon">DS</span>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container nav">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">DS</span>
+            <div>
+            <strong>HÀNH TRÌNH <span>DI SẢN</span></strong>
+            <small>Lịch sử • Văn hóa • Ký ức</small>
+            </div>
+        </a>
+
+        <nav class="menu">
+            <a href="index.html">Trang chủ</a>
+            <a href="disan.html" class="active">Di sản</a>
+            <a href="index.html#map">Bản đồ</a>
+            <a href="index.html#gallery">Thư viện</a>
+            <a href="baiviet.html">Bài viết</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="search-btn" aria-label="Tìm kiếm">⌕</button>
+            <div id="khuVucTaiKhoan">
+            <a href="auth.html" class="login-btn">Đăng nhập</a>
+            </div>
+        </div>
+        </div>
+    </header>
+ 
+    <main>
+
+        <!-- HERO DI SẢN -->
+        <section class="heritage-hero">
+        <div class="heritage-hero-overlay"></div>
+        <div class="container heritage-hero-content">
+            <p class="eyebrow">HÀNH TRÌNH KHÁM PHÁ DI SẢN</p>
+            <h1>Những giá trị<br><span>còn mãi với thời gian</span></h1>
+            <p>
+            Cùng tìm hiểu những địa điểm lịch sử, văn hóa và những câu chuyện
+            gắn liền với vùng đất Quận 12.
+            </p>
+        </div>
+        </section>
+
+        <!-- DANH SÁCH DI SẢN -->
+        <section class="heritage-list section" id="heritage">
+        <div class="container">
+
+            <div class="section-heading">
+            <div>
+                <p class="eyebrow brown">KHÁM PHÁ DI SẢN</p>
+                <h2>Những địa điểm nổi bật</h2>
+            </div>
+            <p class="section-description">
+                Mỗi địa điểm là một câu chuyện về lịch sử, văn hóa và ký ức
+                của vùng đất Quận 12.
+            </p>
+            </div>
+
+            <div class="heritage-grid" id="danhSachDiSan">
+            <div class="loading">
+                Đang tải danh sách di sản...
+            </div>
+            </div>
+
+        </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
         <div>
-          <strong>HÀNH TRÌNH <span>DI SẢN</span></strong>
-          <small>Lịch sử • Văn hóa • Ký ức</small>
-        </div>
-      </a>
-
-      <nav class="menu">
-        <a href="index.html">Trang chủ</a>
-        <a href="disan.html" class="active">Di sản</a>
-        <a href="index.html#map">Bản đồ</a>
-        <a href="index.html#gallery">Thư viện</a>
-        <a href="baiviet.html">Bài viết</a>
-      </nav>
-
-      <div class="nav-actions">
-        <button class="search-btn" aria-label="Tìm kiếm">⌕</button>
-        <div id="khuVucTaiKhoan">
-          <a href="auth.html" class="login-btn">Đăng nhập</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- HERO DI SẢN -->
-    <section class="heritage-hero">
-      <div class="heritage-hero-overlay"></div>
-      <div class="container heritage-hero-content">
-        <p class="eyebrow">HÀNH TRÌNH KHÁM PHÁ DI SẢN</p>
-        <h1>Những giá trị<br><span>còn mãi với thời gian</span></h1>
-        <p>
-          Cùng tìm hiểu những địa điểm lịch sử, văn hóa và những câu chuyện
-          gắn liền với vùng đất Quận 12.
-        </p>
-      </div>
-    </section>
-
-    <!-- DANH SÁCH DI SẢN -->
-    <section class="heritage-list section" id="heritage">
-      <div class="container">
-
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow brown">KHÁM PHÁ DI SẢN</p>
-            <h2>Những địa điểm nổi bật</h2>
-          </div>
-          <p class="section-description">
-            Mỗi địa điểm là một câu chuyện về lịch sử, văn hóa và ký ức
-            của vùng đất Quận 12.
-          </p>
+            <strong class="footer-logo">HÀNH TRÌNH DI SẢN</strong>
+            <p>Khám phá • Kết nối • Lưu giữ giá trị</p>
         </div>
 
-        <div class="heritage-grid" id="danhSachDiSan">
-          <div class="loading">
-            Đang tải danh sách di sản...
-          </div>
+        <div>
+            <h4>Khám phá</h4>
+            <a href="#heritage">Di sản</a>
+            <a href="index.html#map">Bản đồ</a>
+            <a href="index.html#gallery">Thư viện</a>
         </div>
 
-      </div>
-    </section>
+        <div>
+            <h4>Cộng đồng</h4>
+            <a href="index.html#stories">Bài viết</a>
+            <a href="auth.html">Đăng nhập</a>
+            <a href="auth.html">Đăng ký</a>
+        </div>
+        </div>
 
-  </main>
+        <div class="copyright">
+        © 2026 Hành Trình Khám Phá Di Sản
+        </div>
+    </footer>
+    <button type="button" class="nut-gop-y-co-dinh" id="btnMoGopY">✉ </button>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <strong class="footer-logo">HÀNH TRÌNH DI SẢN</strong>
-        <p>Khám phá • Kết nối • Lưu giữ giá trị</p>
-      </div>
+ 
 
-      <div>
-        <h4>Khám phá</h4>
-        <a href="#heritage">Di sản</a>
-        <a href="index.html#map">Bản đồ</a>
-        <a href="index.html#gallery">Thư viện</a>
-      </div>
-
-      <div>
-        <h4>Cộng đồng</h4>
-        <a href="index.html#stories">Bài viết</a>
-        <a href="auth.html">Đăng nhập</a>
-        <a href="auth.html">Đăng ký</a>
-      </div>
-    </div>
-
-    <div class="copyright">
-      © 2026 Hành Trình Khám Phá Di Sản
-    </div>
-  </footer>
-
-  <script src="js/disan.js"></script>
-</body>
-</html>
+    <script src="js/disan.js"></script>
+     <script src="js/app.js"></script>
+    </body>
+    </html>

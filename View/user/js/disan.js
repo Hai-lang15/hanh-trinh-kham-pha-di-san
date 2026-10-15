@@ -1,5 +1,10 @@
 const API_URL = "/api/di-san";
 
+function rutGonNoiDung(noiDung, doDai = 120) {
+  if (!noiDung) return "Đang cập nhật thông tin di sản.";
+  return noiDung.length > doDai ? noiDung.slice(0, doDai).trim() + "..." : noiDung;
+}
+
 async function layDanhSachDiSan() {
   const container = document.getElementById("danhSachDiSan");
 
@@ -27,7 +32,7 @@ async function layDanhSachDiSan() {
           <div class="heritage-card-content">
             <h3>${diSan.ten_di_san}</h3>
             <p class="heritage-card-address">📍 ${diSan.dia_chi || "Chưa cập nhật địa chỉ"}</p>
-            <p class="heritage-card-description">${moTa}</p>
+            <p class="heritage-card-description">${rutGonNoiDung(moTa, 150)}</p>
             <a href="chitiet_sp.html?id=${diSan.id}" class="heritage-detail-btn">Xem chi tiết →</a>
           </div>
         </article>

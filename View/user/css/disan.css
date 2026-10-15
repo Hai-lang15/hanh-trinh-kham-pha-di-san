@@ -70,57 +70,66 @@
 }
 
 .heritage-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background: #fff;
   border: 1px solid #e6e1d8;
+  border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.heritage-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
+/* Ảnh */
 .heritage-card-image {
   width: 100%;
-  height: 300px;
-  display: block;
+  height: 210px;
   object-fit: cover;
 }
 
+/* Nội dung */
 .heritage-card-content {
-  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 22px;
 }
 
 .heritage-card-content h3 {
-  margin-bottom: 12px;
-  font-size: 25px;
-  font-weight: 600;
+  margin: 0 0 10px;
+  font-size: 22px;
+  line-height: 1.4;
 }
 
 .heritage-card-address {
-  margin-bottom: 20px;
-  color: #77736d;
+  margin-bottom: 14px;
+  font-size: 13px;
   line-height: 1.6;
-  font-size: 14px;
 }
 
+/* Mô tả tối đa 3 dòng */
 .heritage-card-description {
-  margin-bottom: 22px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  min-height: 0;
+  margin: 0 0 20px;
   color: #555;
+  font-size: 15px;
   line-height: 1.7;
 }
 
+/* Nút luôn nằm cuối thẻ */
 .heritage-detail-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 11px 20px;
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 11px 18px;
   background: #20201f;
   color: #fff;
   text-decoration: none;
-  font-size: 14px;
-  transition: 0.3s;
+  font-size: 13px;
+  transition: background 0.3s ease;
 }
 
 .heritage-detail-btn:hover {
@@ -158,5 +167,27 @@
 
   .heritage-card-image {
     height: 260px;
+  }
+}
+
+@media (max-width: 900px) {
+  .heritage-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Điện thoại */
+@media (max-width: 600px) {
+  .heritage-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .heritage-card-image {
+    height: 220px;
+  }
+
+  .heritage-card-content {
+    padding: 18px;
   }
 }

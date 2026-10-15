@@ -49,11 +49,20 @@ button {
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 2px;
     min-width: 270px;
 }
 
-.logo-icon {
+
+.logo-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+
+/* .logo-icon {
     width: 46px;
     height: 46px;
     display: grid;
@@ -62,7 +71,7 @@ button {
     background: #a95f32;
     color: white;
     font-weight: 800;
-}
+} */
 
 .logo strong {
     display: block;
@@ -169,12 +178,20 @@ button {
     align-items: center;
     color: white;
     overflow: hidden;
-    background:
-        linear-gradient(90deg, rgba(20,20,18,.9), rgba(20,20,18,.35)),
-        radial-gradient(circle at 75% 45%, #b7794a, #40372f 42%, #171716 80%);
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(20, 20, 18, 0.88),
+            rgba(20, 20, 18, 0.55),
+            rgba(20, 20, 18, 0.2)
+        ),
+        url("/uploads/nen-di-san.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.hero::after {
+/* .hero::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -186,7 +203,7 @@ button {
         transparent 1px,
         transparent 7px
     );
-}
+} */
 
 .hero-content {
     position: relative;
@@ -303,6 +320,9 @@ h2 {
 }
 
 .heritage-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     overflow: hidden;
     background: white;
     border: 1px solid #e6e2d9;
@@ -317,9 +337,30 @@ h2 {
 
 .card-image {
     height: 220px;
+    flex-shrink: 0;
     position: relative;
     background-size: cover;
     background-position: center;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+}
+
+.location {
+    color: #a95f32;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.card-body h3 {
+    margin: 7px 0;
+    font-size: 20px;
+    line-height: 1.4;
 }
 
 .badge {
@@ -334,46 +375,21 @@ h2 {
     font-weight: 700;
 }
 
-.image-1 {
-    background: linear-gradient(135deg, #765f48, #c4a77b 48%, #403b35);
-}
-
-.image-2 {
-    background: linear-gradient(135deg, #4e3d2c, #a46d3c 55%, #d4b07a);
-}
-
-.image-3 {
-    background: linear-gradient(135deg, #31412e, #77855d 55%, #c3a66e);
-}
-
-.image-4 {
-    background: linear-gradient(135deg, #353b46, #6f6659 50%, #b48b61);
-}
-
-.card-body {
-    padding: 20px;
-}
-
-.location {
-    color: #a95f32;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-.card-body h3 {
-    margin: 7px 0;
-    font-size: 20px;
-}
-
 .card-body p:not(.location) {
     color: #77736d;
     font-size: 14px;
-    min-height: 67px;
+    line-height: 1.6;
+    height: 67px;
+    overflow: hidden;
+    margin-bottom: 14px;
 }
 
 .card-link {
+    color: #a95f32;
     font-size: 14px;
+    font-weight: 700;
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .map-section {

@@ -20,4 +20,14 @@ const removeByDiSanId = (diSanId, callback) => {
     db.query(sql, [diSanId], callback);
 };
 
-module.exports = { getByDiSanId, create, remove, removeByDiSanId };
+const getAll = (callback) => {
+    const sql = `
+        SELECT ha.id, ha.di_san_id, ha.duong_dan, ha.mo_ta,
+               ds.ten_di_san
+        FROM hinh_anh_di_san ha
+        LEFT JOIN di_san ds ON ha.di_san_id = ds.id
+        ORDER BY ha.id DESC
+    `;
+    db.query(sql, callback);
+};
+module.exports = { getByDiSanId, create, remove, removeByDiSanId, getAll };

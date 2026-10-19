@@ -17,8 +17,11 @@
     "dotenv": "^18.0.5",
     "express": "^5.2.1",
     "express-session": "^1.19.0",
+    "leaflet": "^1.9.4",
     "multer": "^2.4.0",
     "mysql2": "^3.24.5",
-    "nodemailer": "^10.0.15"
+    "nodemailer": "^10.0.15",
+    "openai": "^7.34.0",
+    "react-leaflet": "^5.0.0"
   }
 }

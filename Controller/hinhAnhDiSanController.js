@@ -85,4 +85,16 @@ const remove = (req, res) => {
     });
 };
 
-module.exports = { getByDiSanId, create, remove };
+const getAll = (req, res) => {
+    hinhAnhDiSanModel.getAll((err, result) => {
+        if (err) {
+            console.log("Lỗi lấy thư viện ảnh:", err);
+            return res.status(500).json({
+                message: "Không thể lấy thư viện ảnh"
+            });
+        }
+
+        res.json(result);
+    });
+};
+module.exports = { getByDiSanId, create, remove, getAll };

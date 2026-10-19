@@ -1,0 +1,1 @@
+ `${API_URL}/${String(p.hinh_anh).replace(/^\/+/, "")}`

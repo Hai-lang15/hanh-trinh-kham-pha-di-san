@@ -6,4 +6,6 @@ router.post("/dang-nhap", authController.dangNhap);
 router.post("/dang-xuat", authController.dangXuat);
 router.get("/toi", authController.kiemTraDangNhap);
 router.post("/xac-thuc-otp", authController.xacThucOTP);
+router.post("/quen-mat-khau", authController.quenMatKhau);
+router.post("/dat-lai-mat-khau", authController.datLaiMatKhau);
 module.exports = router;

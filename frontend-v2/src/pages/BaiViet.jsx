@@ -1,10 +1,16 @@
-﻿
+
 import { useEffect, useState } from "react";
 import { api, API_URL } from "../services/api";
 import { ArrowUpRight, CalendarDays, Clock3, Search } from "lucide-react";
 import { timKiemThongMinh } from "../utils/timKiemThongMinh";
 
 
+
+function plainText(value) {
+  if (!value) return "";
+  const parsed = typeof window !== "undefined" ? new DOMParser().parseFromString(String(value), "text/html") : null;
+  return (parsed?.body?.textContent || String(value).replace(/<[^>]*>/g, " ")).replace(/\s+/g, " ").trim();
+}
 
 export default function BaiViet() {
   const [query, setQuery] = useState("");
@@ -38,7 +44,7 @@ export default function BaiViet() {
             id: p.id,
             tag: p.ten_di_san || "CÂU CHUYỆN DI SẢN",
             title: p.tieu_de || p.title || "Bài viết",
-            desc: p.tom_tat || p.mo_ta || p.noi_dung || "Nội dung bài viết đang được cập nhật.",
+            desc: plainText(p.description || p.mo_ta || p.tom_tat || "") || "Nội dung bài viết đang được cập nhật.",
             date: p.ngay_tao
               ? new Date(p.ngay_tao).toLocaleDateString("vi-VN")
               : "",

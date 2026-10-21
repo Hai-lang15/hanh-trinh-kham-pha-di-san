@@ -5,6 +5,7 @@ const getAll = (callback) => {
         SELECT
             bv.id,
             bv.tieu_de,
+            bv.description,
             bv.noi_dung,
             bv.hinh_anh,
             bv.trang_thai,
@@ -42,17 +43,19 @@ const create = (data, callback) => {
             ma_nguoi_dung,
             ma_di_san,
             tieu_de,
+            description,
             noi_dung,
             hinh_anh,
             trang_thai
         )
-        VALUES (?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
     `;
 
     const values = [
         data.ma_nguoi_dung,
         data.ma_di_san || null,
         data.tieu_de,
+        data.description || null,
         data.noi_dung,
         data.hinh_anh || null,
         data.trang_thai || "cho_duyet"
@@ -67,6 +70,7 @@ const update = (id, data, callback) => {
         SET
             ma_di_san = ?,
             tieu_de = ?,
+            description = ?,
             noi_dung = ?,
             hinh_anh = ?,
             trang_thai = ?
@@ -76,6 +80,7 @@ const update = (id, data, callback) => {
     const values = [
         data.ma_di_san || null,
         data.tieu_de,
+        data.description || null,
         data.noi_dung,
         data.hinh_anh || null,
         data.trang_thai

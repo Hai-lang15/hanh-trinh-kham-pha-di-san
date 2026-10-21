@@ -753,3 +753,57 @@
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+
+/* Responsive hardening: mobile and tablet layouts */
+@media (max-width: 850px) {
+  html, body, #root { max-width: 100%; overflow-x: clip; }
+  .website, main, .page-content { min-width: 0; max-width: 100%; }
+  .detail-layout, .map-layout, .intro, .article-feature { min-width: 0; }
+  .detail-article, .detail-main, .article-content, .article-html-content { min-width: 0; overflow-wrap: anywhere; }
+  .article-html-content pre, .article-html-content table, .detail-article pre, .detail-article table { display: block; max-width: 100%; overflow-x: auto; }
+  .article-html-content iframe, .detail-article iframe, .article-html-content video, .detail-article video { max-width: 100%; }
+  .admin-main, .admin-content, .admin-panel, .admin-table-wrap { min-width: 0; max-width: 100%; }
+  .admin-table-wrap, .table-wrap, .admin-table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .admin-table { min-width: 620px; }
+  .admin-form-grid, .form-grid, .data-toolbar, .admin-page-heading { min-width: 0; }
+  input, select, textarea { max-width: 100%; }
+}
+@media (max-width: 650px) {
+  .page-hero { padding: 42px 6% 34px; min-height: auto; }
+  .page-hero h1 { font-size: clamp(30px, 8vw, 39px); overflow-wrap: anywhere; }
+  .page-hero-mark { font-size: clamp(42px, 12vw, 60px); }
+  .content-wrap { padding: 34px 5% 52px; }
+  .destination-grid, .gallery-grid, .article-grid, .community-grid { grid-template-columns: minmax(0, 1fr); }
+  .destination-card, .gallery-card, .article-card, .community-card { min-width: 0; }
+  .detail-cover { height: clamp(260px, 72vw, 350px); }
+  .detail-cover-text h1 { font-size: clamp(30px, 9vw, 45px); overflow-wrap: anywhere; }
+  .detail-article h1 { font-size: clamp(28px, 7vw, 38px); }
+  .detail-article h2, .article-html-content h2 { font-size: clamp(23px, 6vw, 30px); }
+  .detail-article h3, .article-html-content h3 { font-size: clamp(19px, 5vw, 24px); }
+  .article-html-content { font-size: 15px; line-height: 1.8; }
+  .detail-sidebar { grid-template-columns: minmax(0, 1fr); }
+  .map-layout { grid-template-columns: minmax(0, 1fr); }
+  .map-container, .map-view, .leaflet-container { max-width: 100%; }
+  .admin-content { padding: 20px 12px; }
+  .admin-topbar { gap: 8px; }
+  .admin-top-actions { min-width: 0; }
+  .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat-card, .admin-panel { min-width: 0; }
+  .admin-modal, .admin-editor-modal { width: calc(100% - 20px); max-width: 100%; max-height: calc(100dvh - 24px); overflow-y: auto; box-sizing: border-box; }
+  .modal-actions, .community-form-actions { flex-wrap: wrap; }
+  .modal-actions > button, .community-form-actions > button { flex: 1 1 auto; }
+  .comment-form-bottom { min-width: 0; }
+  .article-comments { margin-top: 38px; padding-top: 24px; }
+}
+@media (max-width: 380px) {
+  .header { padding-left: 12px; padding-right: 12px; }
+  .header .logo { gap: 7px; font-size: 10px; letter-spacing: 0; }
+  .header .logo-icon { width: 29px; height: 29px; }
+  .header .logo-icon svg { width: 21px; height: 21px; }
+  .header .logo small { font-size: 8px; letter-spacing: 0; }
+  .header .menu-toggle { width: 38px; height: 38px; }
+  .stats-grid { grid-template-columns: minmax(0, 1fr); }
+  .survey-card { padding: 18px 14px; }
+  .rating-row { grid-template-columns: minmax(0, 1fr); }
+  .rating-row > strong, .rating-buttons { grid-column: 1; grid-row: auto; text-align: left; }
+}
